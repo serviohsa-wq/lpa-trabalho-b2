@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "estacionamento.h" 
 #include "cadastrar.h"
+#include "consultar.h"
 
  
 int main(void) {
@@ -43,6 +44,8 @@ int main(void) {
 
         if (opcao == 1) {
             cadastrarVeiculo(&veiculos, &quantidade, &capacidade, vagas);
+        } else if (opcao == 2) {
+            consultarVeiculo(veiculos, quantidade);
         } else if (opcao != 0) {
             printf("Funcionalidade ainda nao implementada.\n");
         }
