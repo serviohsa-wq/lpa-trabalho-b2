@@ -3,10 +3,9 @@
 #include "estacionamento.h" 
 #include "cadastrar.h"
 #include "consultar.h"
+#include "mapa.h"
 
- 
 int main(void) {
-    int opcao = 1; 
     int vagas[FILEIRAS][COLUNAS] = {0};
     Veiculo *veiculos = malloc(CAPACIDADE_INICIAL * sizeof(Veiculo));
     int quantidade = 0;
@@ -18,7 +17,8 @@ int main(void) {
         return 1;
     }
 
-    while(opcao != 0) {
+    int opcao; 
+    do {
         printf("\n\n=== ESTACIONAMENTO ===\n");
         printf("1 - Cadastrar veiculo\n");
         printf("2 - Consultar veiculo por identificador\n");
@@ -42,15 +42,23 @@ int main(void) {
         while ((caractere = getchar()) != '\n' && caractere != EOF) {
         }
 
-        if (opcao == 1) {
-            cadastrarVeiculo(&veiculos, &quantidade, &capacidade, vagas);
-        } else if (opcao == 2) {
-            consultarVeiculo(veiculos, quantidade);
-        } else if (opcao != 0) {
-            printf("Funcionalidade ainda nao implementada.\n");
+        switch(opcao) {
+            case 0:
+                printf("Encerrando programa...");
+                break;
+            case 1:
+                cadastrarVeiculo(&veiculos, &quantidade, &capacidade, vagas);
+                break;
+            case 2:
+                consultarVeiculo(veiculos, quantidade);
+                break;
+            case 6:
+                mapaVeiculos(vagas);
+                break;
+            default:
+                printf("Valor invalido, digite um valor valido.\n");
         }
-
-    }
+    } while(opcao != 0);
 
     free(veiculos);
     return 0;
