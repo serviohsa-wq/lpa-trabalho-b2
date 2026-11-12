@@ -136,7 +136,7 @@ int cadastrarVeiculo(Veiculo **veiculos, int *quantidade, int *capacidade,
     }
 
     do {
-        resultado = lerInteiro("Categoria (1-Carro, 2-Moto): ", &novoVeiculo.categoria);
+        resultado = lerInteiro("Categoria (1 - Carro, 2 - Moto): ", &novoVeiculo.categoria);
         if (resultado == 0) {
             return 0;
         }
