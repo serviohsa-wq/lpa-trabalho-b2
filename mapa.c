@@ -2,7 +2,7 @@
 
 #include "mapa.h"
 
-int mapaVeiculos(int vagas[FILEIRAS][COLUNAS]) {
+void mapaVeiculos(int vagas[FILEIRAS][COLUNAS]) {
     
     printf("Mapa de vagas:\n");
     printf("    C1 C2 C3 C4 C5\n");

@@ -4,6 +4,7 @@
 #include "cadastrar.h"
 #include "consultar.h"
 #include "mapa.h"
+#include "listar.h"
 
 int main(void) {
     int vagas[FILEIRAS][COLUNAS] = {0};
@@ -53,6 +54,9 @@ int main(void) {
                 consultarVeiculo(veiculos, quantidade);
                 break;
             case 6:
+                listarVeiculos(veiculos, quantidade);
+                break;
+            case 7:
                 mapaVeiculos(vagas);
                 break;
             default:

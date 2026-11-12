@@ -3,6 +3,6 @@
 
 #include "estacionamento.h"
 
-int mapaVeiculos(int vagas[FILEIRAS][COLUNAS]);
+void mapaVeiculos(int vagas[FILEIRAS][COLUNAS]);
 
 #endif
