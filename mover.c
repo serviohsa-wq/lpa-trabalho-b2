@@ -16,7 +16,7 @@ int moverVeiculo(Veiculo *veiculos, int vagas[FILEIRAS][COLUNAS], int quantidade
     }
 
     do {
-        print("Pressione Enter para cancelar.");
+        printf("Pressione Enter para cancelar.\n");
         resultado = lerIdentificador(identificador);
         if (resultado == 0) {
             return 0;
