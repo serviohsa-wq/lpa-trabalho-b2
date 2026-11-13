@@ -1,46 +1,8 @@
-#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 
 #include "consultar.h"
-
-static void descartarRestanteDaLinha(void) {
-    int caractere;
-
-    while ((caractere = getchar()) != '\n' && caractere != EOF) {
-    }
-}
-
-static int lerIdentificador(char identificador[8]) {
-    char entrada[9];
-    size_t comprimento;
-    size_t indice;
-
-    printf("Identificador (7 caracteres alfanumericos): ");
-    if (fgets(entrada, sizeof(entrada), stdin) == NULL) {
-        return 0;
-    }
-
-    comprimento = strcspn(entrada, "\n");
-    if (entrada[comprimento] != '\n') {
-        descartarRestanteDaLinha();
-        return -1;
-    }
-    entrada[comprimento] = '\0';
-
-    if (comprimento != 7) {
-        return -1;
-    }
-
-    for (indice = 0; indice < comprimento; indice++) {
-        if (!isalnum((unsigned char)entrada[indice])) {
-            return -1;
-        }
-        identificador[indice] = (char)toupper((unsigned char)entrada[indice]);
-    }
-    identificador[comprimento] = '\0';
-    return 1;
-}
+#include "utils.h"
 
 int consultarVeiculo(const Veiculo *veiculos, int quantidade) {
     char identificador[8];

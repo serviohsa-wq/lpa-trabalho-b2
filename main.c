@@ -5,6 +5,7 @@
 #include "consultar.h"
 #include "mapa.h"
 #include "listar.h"
+#include "mover.h"
 
 int main(void) {
     int vagas[FILEIRAS][COLUNAS] = {0};
@@ -52,6 +53,9 @@ int main(void) {
                 break;
             case 2:
                 consultarVeiculo(veiculos, quantidade);
+                break;
+            case 4:
+                moverVeiculo(veiculos, vagas, quantidade);
                 break;
             case 6:
                 listarVeiculos(veiculos, quantidade);

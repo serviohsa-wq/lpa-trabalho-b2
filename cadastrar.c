@@ -4,52 +4,7 @@
 #include <string.h>
 
 #include "cadastrar.h"
-
-static void descartarRestanteDaLinha(void) {
-    int caractere;
-
-    while ((caractere = getchar()) != '\n' && caractere != EOF) {
-    }
-}
-
-static int lerLinha(const char *mensagem, char *destino, size_t tamanho) {
-    size_t comprimento;
-
-    printf("%s", mensagem);
-    if (fgets(destino, (int)tamanho, stdin) == NULL) {
-        return 0;
-    }
-
-    comprimento = strcspn(destino, "\n");
-    if (destino[comprimento] == '\n') {
-        destino[comprimento] = '\0';
-    } else {
-        descartarRestanteDaLinha();
-        return -1;
-    }
-
-    return 1;
-}
-
-static int lerInteiro(const char *mensagem, int *valor) {
-    char linha[64];
-    char *fim;
-    long numero;
-    int resultado;
-
-    resultado = lerLinha(mensagem, linha, sizeof(linha));
-    if (resultado <= 0) {
-        return resultado;
-    }
-
-    numero = strtol(linha, &fim, 10);
-    if (*linha == '\0' || *fim != '\0') {
-        return -1;
-    }
-
-    *valor = (int)numero;
-    return 1;
-}
+#include "utils.h"
 
 static int normalizarIdentificador(char identificador[8]) {
     size_t indice;
