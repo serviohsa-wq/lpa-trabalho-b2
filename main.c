@@ -6,6 +6,7 @@
 #include "mapa.h"
 #include "listar.h"
 #include "mover.h"
+#include "relatorio.h"
 
 int main(void) {
     int vagas[FILEIRAS][COLUNAS] = {0};
@@ -54,14 +55,21 @@ int main(void) {
             case 2:
                 consultarVeiculo(veiculos, quantidade);
                 break;
+            case 3:
+                break; // faltando
             case 4:
                 moverVeiculo(veiculos, vagas, quantidade);
                 break;
+            case 5:
+                break; // faltando
             case 6:
                 listarVeiculos(veiculos, quantidade);
                 break;
             case 7:
                 mapaVeiculos(vagas);
+                break;
+            case 8:
+                gerarRelatorio(veiculos, quantidade);
                 break;
             default:
                 printf("Valor invalido, digite um valor valido.\n");
