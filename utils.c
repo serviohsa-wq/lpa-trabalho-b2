@@ -3,7 +3,21 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+#include "estacionamento.h"
 #include "utils.h"
+
+int localizarVeiculo(const Veiculo *veiculos, int quantidade,
+                            const char *identificador) {
+    int indice;
+
+    for (indice = 0; indice < quantidade; indice++) {
+        if (strcmp(veiculos[indice].identificador, identificador) == 0) {
+            return indice;
+        }
+    }
+    
+    return -1;
+}
 
 void descartarRestanteDaLinha(void) {
     int caractere;

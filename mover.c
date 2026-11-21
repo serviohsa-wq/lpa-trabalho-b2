@@ -27,12 +27,7 @@ int moverVeiculo(Veiculo *veiculos, int vagas[FILEIRAS][COLUNAS], int quantidade
             return 0;
         }
 
-        for (int i = 0; i < quantidade; i++) {
-            if (strcmp(veiculos[i].identificador, identificador) == 0) {
-                indiceVeiculo = i;
-                break;
-            }
-        }
+        indiceVeiculo = localizarVeiculo(veiculos, quantidade, identificador);
 
         if (indiceVeiculo == -1) {
             printf("Veiculo nao encontrado. Tente novamente.\n");
