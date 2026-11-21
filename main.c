@@ -8,6 +8,8 @@
 #include "mover.h"
 #include "relatorio.h"
 #include "atualizar.h"
+#include "remover.h"
+
 int main(void) {
     int vagas[FILEIRAS][COLUNAS] = {0};
     Veiculo *veiculos = malloc(CAPACIDADE_INICIAL * sizeof(Veiculo));
@@ -57,12 +59,13 @@ int main(void) {
                 break;
             case 3:
                 atualizarVeiculo(veiculos, quantidade);
-                break; // faltando
+                break;
             case 4:
                 moverVeiculo(veiculos, vagas, quantidade);
                 break;
             case 5:
-                break; // faltando
+                removerVeiculo(veiculos, &quantidade, vagas);
+                break;
             case 6:
                 listarVeiculos(veiculos, quantidade);
                 break;
