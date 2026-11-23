@@ -59,7 +59,7 @@ int moverVeiculo(Veiculo *veiculos, int vagas[FILEIRAS][COLUNAS], int quantidade
     } while (resultado != 1 || novaColuna < 1 || novaColuna > COLUNAS);
 
     if (veiculos[indiceVeiculo].fileira == novaFileira && veiculos[indiceVeiculo].coluna == novaColuna) {
-        printf("Movimentacao recusada: a vaga de destino e a vaga atual do veiculo sao a mesma.\n", novaFileira, novaColuna);
+        printf("Movimentacao recusada: a vaga de destino (Fileira %d, Coluna %d) ja esta ocupada.\n", novaFileira, novaColuna);
         return 0;
     }
 
